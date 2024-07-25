@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}
+Edit Applicants
+{% endblock %}
+{% block content %}
+        <h1>Edit Applicants Record</h1>
+        {% for row in rows %}
+        <form action="{{ url_for('editrec') }}" method="POST">
+            <h3 style="color:blue">Applicant ID: {{ row['rowid']}}</h3>
+            <input type="hidden" name="rowid" value="{{ row['rowid'] }}">
+            Name<br>
+            <input type="text" name="nm" value="{{ row['name'] }}"/><br>
+
+            Email<br>
+            <input type="text" name="email" value="{{row['addr']}}"/><br>
+
+            Phone_Number<br>
+            <input type="text" name="phone_number" value="{{ row['city'] }}"/><br>
+
+            job_title<br>
+            <input type="text" name="job_title" value="{{ row['zip'] }}"/><br>
+
+            <input type="submit" value="Submit" /><br>
+        </form>
+        {% endfor %}
+{% endblock %}

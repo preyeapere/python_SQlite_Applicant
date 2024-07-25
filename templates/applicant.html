@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}
+Add New Applicant
+{% endblock %}
+{% block content %}
+        <form action="{{ url_for('addrec') }}" method="POST">
+            <h3>Please Add the New Applicant Information:</h3>
+            Name<br>
+            <input type="text" name="nm" /><br>
+
+            Email<br>
+            <textarea name="email"></textarea><br>
+
+            Phone No<br>
+            <input type="text" name="phone_number" /><br>
+
+            Job Title<br>
+            <input type="text" name="job_title" /><br>
+
+            <input type="submit" value="Submit" /><br>
+        </form>
+{% endblock %}
